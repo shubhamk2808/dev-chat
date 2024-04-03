@@ -27,6 +27,11 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import NoChat from "@/components/ui/chat/NoChat"
+import ChatList from "@/components/ui/chat/ChatList"
+import UserPic from "@/components/ui/Common/UserPic"
+import UserStatus from "@/components/ui/Common/UserStatus"
+import { statusList } from "@/lib/contant"
 import { ModeToggle } from "@/components/themeToggle"
 
 export default function Chat() {
@@ -116,17 +121,34 @@ export default function Chat() {
               </nav> 
             </SheetContent>
           </Sheet>
-          <div className="w-full flex-1">
-            <form>
-              <div className="relative">
-                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input
-                  type="search"
-                  placeholder="Search products..."
-                  className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3"
-                />
-              </div>
-            </form>
+          <div className="w-full flex-1 flex-row">
+            <div className='header flex flex-row justify-between '>
+                <div className='left flex flex-row gap-2'>
+                  <UserPic/>
+                  <div>
+                      <h2 >Shubham</h2>
+                      <UserStatus status={statusList.Active} /> 
+                  </div>
+                </div>
+                <div className='flex flex-row items-center gap-3'>
+                  <Search/>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="secondary" size="icon" className="rounded-full">
+                        <CircleUser className="h-5 w-5" />
+                        <span className="sr-only">Toggle user menu</span>
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end">
+                      <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem>Settings</DropdownMenuItem> 
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem>Logout</DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </div>
+            </div> 
           </div>
           <ModeToggle />
           <DropdownMenu>
@@ -145,18 +167,9 @@ export default function Chat() {
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
-        <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
-          <div className="flex items-center">
-            <h1 className="text-lg font-semibold md:text-2xl">Chat</h1>
-          </div>
-          <div className="flex flex-1 items-center justify-center rounded-lg border border-dashed shadow-sm">
-            <div className="flex flex-col items-center gap-1 text-center">
-              <h3 className="text-2xl font-bold tracking-tight">
-                There is no active chat
-              </h3> 
-              <Button className="mt-4">Start chat</Button>
-            </div>
-          </div>
+        <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 items-center">
+          {/* <NoChat/> */}
+          <ChatList/>
         </main>
       </div>
     </div>
