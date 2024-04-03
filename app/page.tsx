@@ -32,6 +32,7 @@ import ChatList from "@/components/ui/chat/ChatList"
 import UserPic from "@/components/ui/Common/UserPic"
 import UserStatus from "@/components/ui/Common/UserStatus"
 import { statusList } from "@/lib/contant"
+import { ModeToggle } from "@/components/themeToggle"
 
 export default function Chat() {
   return (
@@ -149,7 +150,22 @@ export default function Chat() {
                 </div>
             </div> 
           </div>
-          
+          <ModeToggle />
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="secondary" size="icon" className="rounded-full">
+                <CircleUser className="h-5 w-5" />
+                <span className="sr-only">Toggle user menu</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Settings</DropdownMenuItem> 
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Logout</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 items-center">
           {/* <NoChat/> */}
