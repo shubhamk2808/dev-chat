@@ -138,7 +138,9 @@ function ChatList() {
             {
              messages.map((msg ) => {
                 console.log(msg)
-                return <Message message={msg}/>
+               return <div key={msg.id}>
+                  <Message message={msg}/>
+               </div>
                })
             }
           </div>
