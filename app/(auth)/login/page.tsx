@@ -12,6 +12,8 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import AuthLayout from "../layout"
 import type { Metadata } from "next";
+import { SvgGoogleIcon } from "@/assets/svg"
+
 
 export const metadata: Metadata = {
   title: "Dev Chat | Login",
@@ -51,9 +53,9 @@ export default function Login() {
             <Button type="submit" className="w-full">
                 Login
             </Button>
-            <Button variant="outline" className="w-full">
-                Login with Google
-            </Button>
+            <div className="w-full flex justify-center align-center gap-2">
+                <div className="flex gap-2 h-6">Login with <SvgGoogleIcon /></div>
+            </div>
             </div>
             <div className="mt-4 text-center text-sm">
             Don&apos;t have an account?{" "}
