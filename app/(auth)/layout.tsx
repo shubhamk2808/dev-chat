@@ -1,9 +1,3 @@
-// import type { Metadata } from "next";
-
-// export const metadata: Metadata = {
-//   title: "Dev Chat | Login",
-//   description: "Created by Next js",
-// };
 
 export default function AuthLayout({
   children,
