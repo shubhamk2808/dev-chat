@@ -134,7 +134,7 @@ function ChatList() {
   return (
     <div className='max-w-[1200px] w-full max-h-[calc(100vh-60px-3rem)]'>
        <div className='chat-container h-[calc(100%-40px)] max-h-[calc(100%-40px)] '>
-          <div className='flex gap-4 flex-col h-[100%] overflow-y-scroll scrollbar-none '>
+          <div className='flex gap-4 flex-col h-[calc(100%-10px)] overflow-y-scroll scrollbar-w-2'>
             {
              messages.map((msg ) => {
                 console.log(msg)
