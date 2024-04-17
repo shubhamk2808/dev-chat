@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input } from '../input'
+import { Input } from '../ui/input'
 import { Smile, FileInput } from 'lucide-react'
 
 function TypeBox() {
