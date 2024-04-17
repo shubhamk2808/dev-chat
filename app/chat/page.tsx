@@ -32,7 +32,7 @@ import ChatList from "@/components/chat/ChatList"
 import UserPic from "@/components/ui/Common/UserPic"
 import UserStatus from "@/components/ui/Common/UserStatus"
 import { statusList } from "@/lib/contant"
-import { ModeToggle } from "@/theme/themeToggle"
+import { ModeToggle } from "@/components/themeToggle"
 
 export default function Chat() {
   return (
@@ -51,32 +51,32 @@ export default function Chat() {
           </div>
           <div className="flex-1">
             <DropdownMenu>
-              <DropdownMenuTrigger className="lg:px-4 text-xs flex flex-row items-center"><span>Chats </span><ChevronUp className='ml-1 w-3.5'/></DropdownMenuTrigger>
-              <DropdownMenuContent className='ml-4'> 
+              <DropdownMenuTrigger className="lg:px-4 text-xs flex flex-row items-center"><span>Chats </span><ChevronUp className='ml-1 w-3.5' /></DropdownMenuTrigger>
+              <DropdownMenuContent className='ml-4'>
                 <DropdownMenuItem className='text-xs p-1'>Sort by unread</DropdownMenuItem>
-                <DropdownMenuItem className='text-xs  p-1'>Sort by time</DropdownMenuItem> 
+                <DropdownMenuItem className='text-xs  p-1'>Sort by time</DropdownMenuItem>
               </DropdownMenuContent>
-            </DropdownMenu> 
-            <nav className="grid items-start px-2 text-sm font-medium lg:px-4"> 
+            </DropdownMenu>
+            <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
               <Link
-                  href="#"
-                  className="flex items-center gap-3 px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-                >
-                  <User className="h-4 w-4" />
-                  Chat with yourself 
+                href="#"
+                className="flex items-center gap-3 px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+              >
+                <User className="h-4 w-4" />
+                Chat with yourself
               </Link>
               <Link
                 href="#"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
               >
                 <User className="h-4 w-4" />
-                 User
+                User
                 <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
                   6
                 </Badge>
-              </Link> 
+              </Link>
             </nav>
-          </div> 
+          </div>
         </div>
       </div>
       <div className="flex flex-col">
@@ -93,13 +93,13 @@ export default function Chat() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="flex flex-col">
-            <DropdownMenu>
-              <DropdownMenuTrigger className="lg:px-4 text-xs flex flex-row items-center"><span>Chats </span><ChevronUp className='ml-1 w-3.5'/></DropdownMenuTrigger>
-              <DropdownMenuContent> 
-                <DropdownMenuItem className='text-xs p-1'>Sort by unread</DropdownMenuItem>
-                <DropdownMenuItem className='text-xs  p-1'>Sort by time</DropdownMenuItem> 
-              </DropdownMenuContent>
-            </DropdownMenu>
+              <DropdownMenu>
+                <DropdownMenuTrigger className="lg:px-4 text-xs flex flex-row items-center"><span>Chats </span><ChevronUp className='ml-1 w-3.5' /></DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem className='text-xs p-1'>Sort by unread</DropdownMenuItem>
+                  <DropdownMenuItem className='text-xs  p-1'>Sort by time</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <nav className="grid gap-2 text-lg font-medium">
                 <Link
                   href="#"
@@ -107,48 +107,48 @@ export default function Chat() {
                 >
                   <Package2 className="h-6 w-6" />
                   <span className="sr-only">Dev Chat</span>
-                </Link> 
+                </Link>
                 <Link
                   href="#"
                   className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
                 >
                   <User className="h-5 w-5" />
-                   User
+                  User
                   <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
                     5
                   </Badge>
-                </Link> 
-              </nav> 
+                </Link>
+              </nav>
             </SheetContent>
           </Sheet>
           <div className="w-full flex-1 flex-row">
             <div className='header flex flex-row justify-between '>
-                <div className='left flex flex-row gap-2'>
-                  <UserPic/>
-                  <div>
-                      <h2 >Shubham</h2>
-                      <UserStatus status={statusList.Active} /> 
-                  </div>
+              <div className='left flex flex-row gap-2'>
+                <UserPic />
+                <div>
+                  <h2 >Shubham</h2>
+                  <UserStatus status={statusList.Active} />
                 </div>
-                <div className='flex flex-row items-center gap-3'>
-                  <Search/>
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button variant="secondary" size="icon" className="rounded-full">
-                        <CircleUser className="h-5 w-5" />
-                        <span className="sr-only">Toggle user menu</span>
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                      <DropdownMenuSeparator />
-                      <DropdownMenuItem>Settings</DropdownMenuItem> 
-                      <DropdownMenuSeparator />
-                      <DropdownMenuItem>Logout</DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                </div>
-            </div> 
+              </div>
+              <div className='flex flex-row items-center gap-3'>
+                <Search />
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="secondary" size="icon" className="rounded-full">
+                      <CircleUser className="h-5 w-5" />
+                      <span className="sr-only">Toggle user menu</span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>Settings</DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>Logout</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
+            </div>
           </div>
           <ModeToggle />
           <DropdownMenu>
@@ -161,7 +161,7 @@ export default function Chat() {
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem> 
+              <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem>Logout</DropdownMenuItem>
             </DropdownMenuContent>
@@ -169,7 +169,7 @@ export default function Chat() {
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 items-center">
           {/* <NoChat/> */}
-          <ChatList/>
+          <ChatList />
         </main>
       </div>
     </div>
